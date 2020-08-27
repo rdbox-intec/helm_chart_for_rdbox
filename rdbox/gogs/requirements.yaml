@@ -2,4 +2,4 @@ dependencies:
 - condition: postgresql.install
   name: postgresql
   repository: https://rdbox-intec.github.io/rdbox_app_market/bot-gen
-  version: ~ 8.10.11
+  version: 9.x.x

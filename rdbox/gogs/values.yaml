@@ -40,7 +40,7 @@ service:
   ## SSH_DOMAIN - Domain name to be exposed in SSH clone URL.
   ## ref: https://gogs.io/docs/advanced/configuration_cheat_sheet
   ##
-  sshDomain: localhost
+  sshDomain: service-gogs.rdbox.lan
 
   ## Gogs configuration values
   ## ref: https://gogs.io/docs/advanced/configuration_cheat_sheet
@@ -149,11 +149,11 @@ service:
 
     ## Enable this to use captcha validation for registration.
     ##
-    serverDomain: gogs.example.com
+    serverDomain: service-gogs.rdbox.lan
 
     ## Full public URL of Gogs server.
     ##
-    serverRootUrl: http://gogs.example.com/
+    serverRootUrl: https://service-gogs.rdbox.lan/
 
     ## Landing page for non-logged users, can be "home" or "explore"
     ##
@@ -301,21 +301,19 @@ service:
     ## Must be provided if Ingress is enabled.
     ##
     hosts:
-      - gogs.rdbox.lan
+      - service-gogs.rdbox.lan
+    #   - gogs.domain.com
 
     ## TLS configuration.
     ## Secrets must be manually created in the namespace.
     ##
     tls:
-      - secretName: rdbox-common-tls
-        hosts:
-          - "*.rdbox.lan"
-
-  ## Service annotations.
-  ## Allows attaching metadata to services for kubernetes components to act on.
-  ##
-  # annotations:
-  #   service.beta.kubernetes.io/aws-load-balancer-backend-protocol: http
+      - hosts:
+        - '*.rdbox.lan'
+        secretName: rdbox-common-tls
+    #   - secretName: gogs-tls
+    #     hosts:
+    #       - gogs.domain.com
 
 
 ## Persistent Volume Storage configuration.
@@ -368,6 +366,10 @@ postgresql:
   ## PostgreSQL Database to create.
   ##
   postgresqlDatabase: gogs
+
+  ## PostgreSQL SSL Mode
+  ##
+  postgresSSLMode: disable
 
   ## Persistent Volume Storage configuration.
   ## ref: https://kubernetes.io/docs/user-guide/persistent-volumes

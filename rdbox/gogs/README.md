@@ -48,9 +48,9 @@ chart and their default values.
 | `image.pullPolicy`                | Gogs image pull policy                                       | `Always` if `imageTag` is `latest`, else `IfNotPresent`    |
 | `postgresql.install`             | Weather or not to install PostgreSQL dependency              | `true`                                                     |
 | `postgresql.postgresHost`        | PostgreSQL host (if `postgresql.install == false`)           | `nil`                                                      |
-| `postgresql.postgresUser`        | PostgreSQL User to create                                    | `gogs`                                                     |
-| `postgresql.postgresPassword`    | PostgreSQL Password for the new user                         | `gogs`                                                     |
-| `postgresql.postgresDatabase`    | PostgreSQL Database to create                                | `gogs`                                                     |
+| `postgresql.postgresqlUsername`        | PostgreSQL User to create                                    | `gogs`                                                     |
+| `postgresql.postgresqlPassword`    | PostgreSQL Password for the new user                         | `gogs`                                                     |
+| `postgresql.postgresqlDatabase`    | PostgreSQL Database to create                                | `gogs`                                                     |
 | `postgresql.postgresSSLMode`     | PostgreSQL SSL Mode                                          | `disable`                                                  |
 | `postgresql.persistence.enabled` | Enable PostgreSQL persistence using Persistent Volume Claims | `true`                                                     |
 | `serviceType`                    | The type of service to create (`ClusterIP`, `NodePort`, `LoadBalancer`) | `NodePort`                                      |
