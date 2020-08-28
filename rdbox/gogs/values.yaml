@@ -40,7 +40,7 @@ service:
   ## SSH_DOMAIN - Domain name to be exposed in SSH clone URL.
   ## ref: https://gogs.io/docs/advanced/configuration_cheat_sheet
   ##
-  sshDomain: service-gogs.rdbox.lan
+  sshDomain: gogs.rdbox.lan
 
   ## Gogs configuration values
   ## ref: https://gogs.io/docs/advanced/configuration_cheat_sheet
@@ -149,11 +149,11 @@ service:
 
     ## Enable this to use captcha validation for registration.
     ##
-    serverDomain: service-gogs.rdbox.lan
+    serverDomain: gogs.rdbox.lan
 
     ## Full public URL of Gogs server.
     ##
-    serverRootUrl: https://service-gogs.rdbox.lan/
+    serverRootUrl: https://gogs.rdbox.lan/
 
     ## Landing page for non-logged users, can be "home" or "explore"
     ##
@@ -301,7 +301,7 @@ service:
     ## Must be provided if Ingress is enabled.
     ##
     hosts:
-      - service-gogs.rdbox.lan
+      - gogs.rdbox.lan
     #   - gogs.domain.com
 
     ## TLS configuration.
